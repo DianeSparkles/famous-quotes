@@ -12,7 +12,7 @@ public class Main {
         try {
             YamlQuoteReader reader = new YamlQuoteReader("src/main/resources/quotes.yaml");
             Component initialComponent = QuotesComponent.createFromQuoteMaps(reader.readQuotes());
-            renderToFile(initialComponent);
+            renderToFile(initialComponent)
         }
         catch (Exception e) {
             e.printStackTrace();
