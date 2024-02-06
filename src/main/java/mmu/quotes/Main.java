@@ -12,12 +12,8 @@ public class Main {
 
         try {
             QuoteReader reader = null;
-            if (args.length > 0 && args[0].equals("json")) {
-                reader = new JsonQuoteReader("src/main/resources/quotes.json");
-                }
-            else {
-                reader = new YamlQuoteReader("src/main/resources/quotes.yaml");
-                }
+            reader = new JsonQuoteReader("src/main/resources/quotes.json");
+
             Component initialComponent = QuotesComponent.createFromQuoteMaps(reader.readQuotes());
             renderToFile(initialComponent);
         }
